@@ -1,0 +1,154 @@
+*{
+    box-sizing: border-box;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+.calculator-body{
+    display: grid;
+    width: 20rem;
+    min-width: 14rem;
+    height: 30rem;
+    background-color: rgb(20, 21, 21);
+    grid-template-areas: 
+    "total total total total"
+    "Clear Clear arrow division"
+    "numbers numbers numbers multiplication"
+    "numbers numbers numbers minus"
+    "numbers numbers numbers plus"
+    "numbers numbers numbers equalSign";
+    grid-template-rows: 1.6fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-radius: 38px;
+    box-shadow: 0px 0px 15px -1px #756c6c;
+}
+.total-Equasion{
+    grid-area: total;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+    color: #F0F0F0;
+    font-size: 40px;
+    padding: 5px;
+}
+.numbers{
+    grid-area: numbers;
+    display: grid;
+    /* border: 2px solid #112323;
+    border-right: none; */
+    grid-template-areas: 
+    "num7 num8 num9"
+    "num4 num5 num6"
+    "num1 num2 num3"
+    "num0 num0 num0";
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.clear-button{
+    grid-area: Clear;
+    border-radius: 42px;
+    border: 1px solid #000000;
+}
+.back-arrow{
+    grid-area: arrow;
+    border-radius: 42px;
+    border: 1px solid #000000;
+}
+.division{
+    grid-area: division;
+    border: 1px solid #000000;
+}
+.num-9{
+    grid-area: num9;
+    border-radius: 42px;
+    border: 1px solid #000000;
+}
+.num-8{
+    grid-area: num8;
+    border-radius: 42px;
+    border: 1px solid #000000;
+}
+.num-7{
+    grid-area: num7;
+    border-radius: 42px;
+    border: 1px solid #010101;
+}
+.num-6{
+    grid-area: num6;
+    border-radius: 42px;
+    border: 1px solid #000000;
+}
+.num-5{
+    grid-area: num5;
+    border-radius: 42px;
+    border: 1px solid #000000;
+}
+.num-4{
+    grid-area: num4;
+    border-radius: 42px;
+    border: 1px solid #000000;
+}
+.num-3{
+    grid-area: num3;
+    border-radius: 42px;
+    border: 1px solid #000000;
+}
+.num-2{
+    grid-area: num2;
+    border-radius: 42px;
+    border: 1px solid #000000;
+}
+.num-1{
+    grid-area: num1;
+    border-radius: 42px;
+    border: 1px solid #000000;
+}
+.num-0{
+    grid-area: num0;
+    border-radius: 42px;
+    border: 1px solid #000000;
+}
+.multiplication{
+    grid-area: multiplication;
+}
+.minus{
+    grid-area: minus;
+}
+.plus{
+    grid-area: plus;
+}
+.equalSign{
+    grid-area: equalSign;
+}
+.math{
+    background-color: #BF0311;
+    border: 1px solid #000000;
+    /* border-radius: 2px; */
+    border-radius: 42px;
+}
+.math:hover{
+    background-color: #f6b067;
+
+}
+
+@media (max-width : 700px){
+    .calculator-body{
+        display: grid;
+        width: 16rem;
+        height: 24rem;
+        background-color: rgb(20, 21, 21);
+        grid-template-areas: 
+        "total total total total"
+        "Clear Clear arrow division"
+        "numbers numbers numbers multiplication"
+        "numbers numbers numbers minus"
+        "numbers numbers numbers plus"
+        "numbers numbers numbers equalSign";
+        grid-template-rows: 1.6fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        border-radius: 38px;
+        box-shadow: 0px 0px 15px -1px #756c6c;
+    }
+}
