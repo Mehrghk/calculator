@@ -4,6 +4,7 @@ let previousOperator;
 const totalNumber = document.querySelector(".total-Equasion");
 
 function buttonClick(value){
+    // if(value.target === )
     if (isNaN(parseInt(value))){
         handleSymbol(value);
     } else {
@@ -27,7 +28,7 @@ function handleMath(value){
         return;
     } 
 
-    const intTotal = parseInt(total);
+    const intTotal = parseFloat(total);
     if(runningTotal === 0){
         runningTotal = intTotal;
     } else {
@@ -35,8 +36,7 @@ function handleMath(value){
     }
 
     previousOperator = value;
-    total = '0';
-    // console.log(runningTotal);
+    total = '';
 }
 
 function flushOperation(intTotal){
@@ -46,10 +46,11 @@ function flushOperation(intTotal){
         runningTotal -= intTotal;
     } else if( previousOperator === '⨯'){
         runningTotal *= intTotal;
-    } else if( previousOperator === '/'){
+    } else if( previousOperator === '÷'){
         runningTotal /= intTotal;
     }
 }
+
 function handleSymbol(symbol){
     switch (symbol) {
         case 'C':
@@ -61,7 +62,7 @@ function handleSymbol(symbol){
                 // need two numbers to do math
                 return;
             }
-            flushOperation(parseInt(total));
+            flushOperation(parseFloat(total));
             previousOperator = null;
             total =  + runningTotal;
             console.log(total);
@@ -79,21 +80,29 @@ function handleSymbol(symbol){
         case '+':        
         case '-':        
         case '⨯':        
-        case '/':        
+        case '÷':        
             handleMath(symbol);
             break;   
-
     }
 }
 
 function initialize(){
     document.querySelector('.calculator-body')
         .addEventListener('click', function(event){
-            buttonClick(event.target.innerText);
+            if(event.target.matches("button")){
+                buttonClick(event.target.innerText);
+            } else {
+                return;
+            }
+            
         });
 }
 
 function rewrite(){
+    if(total.length % 15 == 0){
+        total += "\n";
+    }
     totalNumber.innerText = total;
 }
+
 initialize();

@@ -29,10 +29,12 @@ section{
     grid-area: total;
     display: flex;
     align-items: flex-end;
-    flex-direction: row-reverse;
+    /* flex-direction: row-reverse; */
     color: #F0F0F0;
     font-size: 40px;
     padding: 5px;
+    margin: 5px;
+    overflow: overlay;
 }
 .numbers{
     grid-area: numbers;
@@ -47,11 +49,13 @@ section{
     grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 .clear-button{
+    font-size: 15px;
     grid-area: Clear;
     border-radius: 42px;
     border: 1px solid #000000;
 }
 .back-arrow{
+    font-size: 15px;
     grid-area: arrow;
     border-radius: 42px;
     border: 1px solid #000000;
@@ -123,6 +127,8 @@ section{
     grid-area: equalSign;
 }
 .math{
+    font-size: 15px;
+    color: #F0F0F0;
     background-color: #BF0311;
     border: 1px solid #000000;
     /* border-radius: 2px; */
